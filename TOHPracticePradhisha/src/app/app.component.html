@@ -1,9 +1,19 @@
 
+<div *ngIf="selectedStock">
+  <h2>{{selectedStock.name}} details!</h2>
+  <div><label>id: </label>{{selectedStock.code}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="selectedStock.name" placeholder="name"/>
+  </div>
+</div>
 
 <h1>{{title}}</h1>
-<h2>{{stockname.companyname}} details!</h2>
-<div><label>StockCode: </label>{{stockname.code}}</div>
-<div>
-  <label>Stockname: </label>
-  <input [(ngModel)]="stockname.companyname" placeholder="Enter stocknamename..">
-</div>
+<h2>My StockList</h2>
+<ul class="StockList">
+  <li *ngFor="let a of StockList"
+    [class.selected]="a === SelectedStock"
+    (click)="onSelect(a)">
+    <span class="badge">{{a.code}}</span> {{a.name}}
+  </li>
+</ul>

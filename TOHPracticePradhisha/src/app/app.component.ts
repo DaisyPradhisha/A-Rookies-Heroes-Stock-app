@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
 
-export class sname {
+export class Sparam {
   code: string;
-  companyname: string;
+  name: string;
 }
+ 
+const SList: Sparam[] = [
+  { code: 'APPL', name: 'Apple' },
+  { code: 'GOOG', name: 'Google' },
+];
 
 @Component({
   selector: 'app-root',
@@ -13,9 +18,12 @@ export class sname {
 
 
 export class AppComponent {
-  title = 'Welcome to StockAid';
-  stockname: sname = {
-    code: 'AAPL',
-    companyname: 'APPLE'
-  };
+  title = 'Stock List';
+  StockList = SList;
+  selectedStock: Sparam;
+ 
+  onSelect(a: Sparam): void {
+    this.selectedStock = a;
+  }
 }
+
