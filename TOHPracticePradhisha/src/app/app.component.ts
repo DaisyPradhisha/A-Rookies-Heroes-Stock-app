@@ -8,6 +8,8 @@ export class Sparam {
 const SList: Sparam[] = [
   { code: 'APPL', name: 'Apple' },
   { code: 'GOOG', name: 'Google' },
+  { code: 'AJX', name: '	Great Ajax Corp' },
+  { code: 'ORCL', name: 'Oracle Corp' },
 ];
 
 @Component({
@@ -18,7 +20,7 @@ const SList: Sparam[] = [
 
 
 export class AppComponent {
-  title = 'Stock List';
+  title = 'StockAid';
   StockList = SList;
   selectedStock: Sparam;
  

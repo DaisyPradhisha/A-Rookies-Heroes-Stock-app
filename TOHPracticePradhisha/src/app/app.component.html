@@ -1,5 +1,8 @@
 
+
+<h1>{{title}}</h1>
 <div *ngIf="selectedStock">
+    
   <h2>{{selectedStock.name}} details!</h2>
   <div><label>id: </label>{{selectedStock.code}}</div>
   <div>
@@ -8,7 +11,7 @@
   </div>
 </div>
 
-<h1>{{title}}</h1>
+
 <h2>My StockList</h2>
 <ul class="StockList">
   <li *ngFor="let a of StockList"
