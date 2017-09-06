@@ -24,8 +24,8 @@
   color: white;
 }
 .StockList li:hover {
-  color: #607D8B;
-  background-color: #DDD;
+  color: #8B6089;
+  background-color: rgb(221, 221, 221);
   left: .1em;
 }
 .StockList .text {
@@ -35,7 +35,7 @@
 .StockList .badge {
   display: inline-block;
   font-size: small;
-  color: white;
+  color: #C0D4FF;
   padding: 0.8em 0.7em 0 0.7em;
   background-color: #607D8B;
   line-height: 1em;
