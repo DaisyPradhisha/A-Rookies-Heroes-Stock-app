@@ -26,14 +26,14 @@ export class AppComponent implements OnInit {
 
   getStock():void
   {
-    this.stocks=this.stockService.getStock();
+    this.stockService.getStock().then(stocks=>this.stocks=stocks);
   }
 
   ngOnInit():void
   {
     this.getStock();
   }
-  onSelect(a: Sparam): void {
+  onSelect(a: Sparam): void { 
     this.selectedStock = a;
   }
 }

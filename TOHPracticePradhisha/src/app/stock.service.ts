@@ -5,8 +5,9 @@ import { Sparam } from './stock';
 @Injectable ()
 export class StockService
 {
-    getStock():Sparam[]{
-        return SList;
+    getStock():Promise<Sparam[]>
+    {
+        return Promise.resolve(SList);
     }
 
     

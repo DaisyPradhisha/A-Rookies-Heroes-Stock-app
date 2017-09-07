@@ -3,8 +3,8 @@
 
 
 <h2>My StockList</h2>
-<ul class="StockList">
-  <li *ngFor="let a of StockList"
+<ul class="stocks">
+  <li *ngFor="let a of stocks"
     [class.selected]="a === selectedStock"
     (click)="onSelect(a)">
     <span class="badge">{{a.code}}</span> {{a.name}}
