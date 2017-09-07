@@ -1,26 +1,38 @@
 import { Component } from '@angular/core';
+import { Sparam } from './stock';
+import {StockService} from './stock.service';
+import {OnInit} from '@angular/core';
 
-import { Sparam } from './stock'
  
-const SList: Sparam[] = [
-  { code: 'APPL', name: 'Apple' },
-  { code: 'GOOG', name: 'Google' },
-  { code: 'AJX', name: 'Great Ajax Corp' },
-  { code: 'ORCL', name: 'Oracle Corp' },
-];
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [StockService]
 })
 
 
-export class AppComponent {
 
-  StockList = SList;
+export class AppComponent implements OnInit {
+
+  stocks:Sparam[];
+  /*StockList = SList;*/
   selectedStock: Sparam;
  
+  constructor (private stockService:StockService)
+  {
+
+  }
+
+  getStock():void
+  {
+    this.stocks=this.stockService.getStock();
+  }
+
+  ngOnInit():void
+  {
+    this.getStock();
+  }
   onSelect(a: Sparam): void {
     this.selectedStock = a;
   }
