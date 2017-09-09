@@ -1,24 +1,38 @@
-import { Component, Input } from '@angular/core';
+
 
 import { Sparam } from './stock';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Location }                 from '@angular/common';
+
+import {StockService} from './stock.service';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-stock-detail',
-  template:`<h1>{{title}}</h1>
-  <div *ngIf="ss">
-      
-    <h2>{{ss.name}} details!</h2>
-    <div><label>id: </label>{{ss.code}}</div>
-    <div>
-      <label>name: </label>
-      <input [(ngModel)]="ss.name" placeholder="name"/>
-    </div>
-  </div>`
+  templateUrl:'./stock-detail.component.html',
+  styleUrls:['./stock-detail.component.css']
  
 })
 
-export class StockDetailComponent  {
+export class StockDetailComponent  implements OnInit {
   title = 'Welcome to StockAid';
+  constructor(
+    private stockService: StockService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
 @Input() ss:Sparam;
+
+ngOnInit(): void {
+  this.route.paramMap
+    .switchMap((params: ParamMap) => this.stockService.getStock())
+    .subscribe();
+    
+}
+
+goBack(): void {
+  this.location.back();
+}
 
 }
