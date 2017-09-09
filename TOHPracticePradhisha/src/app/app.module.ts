@@ -33,7 +33,7 @@ import {DashboardComponent} from './dashboard.component';
     ]),
     RouterModule.forRoot([
       {
-        path: 'detail/:id',
+        path: 'detail/:code',
         component: StockDetailComponent
       }
     ])

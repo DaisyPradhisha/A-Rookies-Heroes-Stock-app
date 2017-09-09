@@ -26,13 +26,14 @@ export class StockDetailComponent  implements OnInit {
 
 ngOnInit(): void {
   this.route.paramMap
-    .switchMap((params: ParamMap) => this.stockService.getStock())
-    .subscribe();
+    .switchMap((params: ParamMap) => this.stockService.getStocks(params.get('code')))
+    .subscribe(ss => this.ss = ss);
     
 }
 
 goBack(): void {
   this.location.back();
 }
+
 
 }

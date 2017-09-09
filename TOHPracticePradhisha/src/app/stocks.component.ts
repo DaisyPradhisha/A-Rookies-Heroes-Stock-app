@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Sparam } from './stock';
 import {StockService} from './stock.service';
 import {OnInit} from '@angular/core';
-
+import { Router } from '@angular/router';
  
 @Component({
   selector: 'my-stocks',
@@ -19,7 +19,8 @@ export class StocksComponent implements OnInit {
   /*StockList = SList;*/
   selectedStock: Sparam;
  
-  constructor (private stockService:StockService)
+  constructor ( private router: Router,
+    private stockService:StockService)
   {
 
   }
@@ -33,11 +34,13 @@ export class StocksComponent implements OnInit {
   {
     this.getStock();
   }
-  gotoDetail(): void {
-   
-  }
+
   onSelect(a: Sparam): void { 
     this.selectedStock = a;
+  }
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedStock.code]);
   }
 }
 
