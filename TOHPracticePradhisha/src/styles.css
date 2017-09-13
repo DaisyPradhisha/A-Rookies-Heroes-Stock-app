@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* Master Styles */
+/* Master Styles 
 h1 {
     color: #369;
     font-family: Comic Sans Ms;
@@ -17,7 +17,10 @@ h1 {
     color: #888;
     font-family: Comic Sans Ms;
   }
-  /* everywhere else */
-  * {
+
+  {
     font-family: Comic Sans Ms;
   }
+  */
+
+  @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";

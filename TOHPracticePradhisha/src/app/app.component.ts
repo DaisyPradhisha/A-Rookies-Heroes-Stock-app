@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import { MdOptionSelectionChange } from "@angular/material/material";
+
+import { OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -12,3 +16,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
  title = 'Tour of Stocks';
 }
+
+
