@@ -1,9 +1,0 @@
-<h3>Top Stocks</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let a of stocks"  [routerLink]="['/detail', a.code]" class="col-1-4">
-    <div class="module stock">
-      <h4>{{a.name}}</h4>
-    </div>
-  
-  </a>
-</div>
